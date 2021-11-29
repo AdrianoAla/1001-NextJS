@@ -3,10 +3,6 @@ import "firebase/auth";
 import { getDatabase } from "firebase/database";
 import "firebase/compat/auth"
 
-const ak = "AIzaSyCH9q8IBxZ0Y5J82RJv_1Sc-CHqP5zj8wY";
-
-console.log(ak === process.env.REACT_APP_API_KEY);
-
 const fb = firebase.initializeApp({
     apiKey: process.env.REACT_APP_API_KEY,
     authDomain: process.env.REACT_APP_AUTH_DOMAIN,

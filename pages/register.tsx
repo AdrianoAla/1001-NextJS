@@ -85,7 +85,10 @@ export default function Register () {
     }
 
     return (
-      
+        <>
+          <head>
+              <title>Register</title>
+          </head>
         <div>
           <div id={styles.container}>
             {(error ? <h6 className={styles.error}>{error}</h6> : null)}
@@ -107,11 +110,9 @@ export default function Register () {
             
 
           </div>
-          <head>
-            <title>Register</title>
-          </head>
+          
       </div>
-
+      </>
 
     );
   };

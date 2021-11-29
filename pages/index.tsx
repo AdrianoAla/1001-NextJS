@@ -128,7 +128,6 @@ export default function Home() {
    
   
     function checkWin(state: string): void {
-      console.log(auth.currentUser);
       if (state === winState) {
         calculateScore().then((score:number) => {
             if (score < 0) score = 0;

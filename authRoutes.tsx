@@ -11,8 +11,8 @@ export default function  AuthRoute({ children }): any {
     useEffect(() => {
         auth.onAuthStateChanged(user => {
             if (user) {
-                setLoading(false);
             }
+            setLoading(false);
         })}, []);
     
     if (loading) {
