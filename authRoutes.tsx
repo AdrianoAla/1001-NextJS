@@ -6,7 +6,7 @@ export interface IAuthRouteProps { }
 
 export default function  AuthRoute({ children }): any {
 
-    const [loading, setLoading] = React.useState(false);
+    const [loading, setLoading] = React.useState(true);
 
     useEffect(() => {
         auth.onAuthStateChanged(user => {
