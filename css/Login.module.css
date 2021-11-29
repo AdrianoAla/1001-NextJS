@@ -1,0 +1,97 @@
+
+.error {
+    background-color: #d6796e;
+    border: 5px solid rgb(147, 85, 85);
+    padding: 1rem;
+    margin-top: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    border-radius: 1rem;
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.uibutton {
+    background-color: rgb(173, 243, 220);
+    margin-top: 20px;
+    border: 3px solid black;
+    color: rgb(0, 0, 0);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 3rem;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.uibar {
+    width: auto;
+    float: right;
+    font-size: 1rem;
+    height: auto;
+    padding-bottom: 10px;
+    width: 20rem;
+    margin: 0px;
+    vertical-align: center;
+}
+
+.toOther {
+    font-size: 1rem;
+}
+
+.login {
+    font-size: 1rem;
+    padding: 1rem;
+    /*padding-top: 0.5rem;*/
+    text-align: left;
+    align-items: left;
+    float: left;
+}
+
+.logintext {
+    font-size: 4rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+@media (max-width : 480px) {
+    .login {
+        font-size: 1.5rem;
+        padding-bottom: 0.3rem;
+        float: left;
+    }
+
+    .logintext {
+        font-size: 3rem;
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+        color: rgb(0, 0, 0);
+        text-align: center;
+    }
+    
+}
+
+.App {
+    font-size: 5rem;
+
+    margin: 0px;
+    outline: none;
+
+    position: absolute;
+    text-align: center;
+    background-color: rgb(173, 243, 220);
+    width: 99%;
+    height: 98%;
+}
+

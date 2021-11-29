@@ -1,0 +1,141 @@
+* { margin:0; padding:0; box-sizing:border-box; }
+
+.small-h6 {
+  font-size: .8rem;
+}
+
+li {
+  font-size: 3rem;
+}
+
+.App {
+  font-size: 5rem;
+
+  margin: 0px;
+  outline: none;
+
+  position: absolute;
+  text-align: center;
+  background-color: rgb(173, 243, 220);
+  width: 99%;
+  height: 98%;
+}
+
+h6 {
+  font-size: 2.1rem;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+}
+
+#goal-text {
+  font-size: 2rem;
+  margin: 0.7rem;
+  text-align: left;
+  float: left;
+}
+
+#reset-button {
+  width: fit-content;
+  display: block;
+  float: right;
+  top: 0px;
+  background-color: transparent;
+  border: 5px solid rgb(0,0,0);
+  margin: 0.7rem;
+  width: 5rem;
+  font-size: 1rem;
+}
+
+#navbar-div {
+  position: absolute;
+  width: 100%;
+}
+
+#StateText {
+  padding: 5rem;
+}
+
+#SpecialThanks {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+
+
+
+/* Make button be a square */
+.control {
+  background-color: transparent;
+  border: 10px solid rgb(0,0,0);
+  margin: 1rem;
+
+  width: 13rem;
+  height: 13rem;
+  
+  font-size: 5rem;
+}
+
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.250);
+}
+
+button:disabled {
+  background-color: rgb(107, 144, 131);
+}
+
+
+#reset-button:hover {
+  background-color: rgba(0, 0, 0, 0.250);
+}
+
+
+@media (max-width : 480px) {
+  #reset-button img {
+    width: 30%;
+}
+  #goal-text {
+    font-size: 1rem;
+  }
+  #StateText {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 1rem;
+    padding-top: 7rem;
+  }
+  #SpecialThanks {
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .App {
+    font-size: 2rem;
+    position: absolute;
+    text-align: center;
+    background-color: rgb(173, 243, 220);
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+  }
+
+  body {
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(173, 243, 220)
+  }
+  
+  /* Make button be a square */
+  .control {
+    border: 10px solid rgb(0,0,0);
+    margin: 0.4rem;
+  
+    width: 8rem;
+    height: 8rem;
+  
+    font-size: 5rem;
+  }
+}
+
+
