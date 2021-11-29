@@ -1,0 +1,121 @@
+
+.small-h6 {
+  font-size: .8rem;
+}
+
+
+.App {
+  font-size: 5rem;
+
+  margin: 0px;
+  outline: none;
+
+  position: absolute;
+  text-align: center;
+  background-color: rgb(173, 243, 220);
+  width: 99%;
+  height: 98%;
+}
+
+#goalText {
+  font-size: 2rem;
+  margin: 0.7rem;
+  text-align: left;
+  float: left;
+}
+
+#resetButton {
+  width: fit-content;
+  display: block;
+  float: right;
+  top: 0px;
+  background-color: transparent;
+  border: 5px solid rgb(0,0,0);
+  margin: 0.7rem;
+  width: 5rem;
+  font-size: 1rem;
+}
+
+#navbarDiv {
+  position: absolute;
+  width: 100%;
+}
+
+#stateText {
+  font-size: 3rem;
+  padding: 5rem;
+}
+
+#specialThanks {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+
+
+
+/* Make button be a square */
+.control {
+  background-color: transparent;
+  border: 10px solid rgb(0,0,0);
+  margin: 1rem;
+
+  width: 13rem;
+  height: 13rem;
+  
+  font-size: 5rem;
+}
+
+
+
+
+
+#resetButton:hover {
+  background-color: rgba(0, 0, 0, 0.250);
+}
+
+
+@media (max-width : 480px) {
+  #resetButton img {
+    width: 30%;
+}
+  #goalText {
+    font-size: 1rem;
+  }
+  #stateText {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 1rem;
+    padding-top: 7rem;
+  }
+  #specialThanks {
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .App {
+    font-size: 2rem;
+    position: absolute;
+    text-align: center;
+    background-color: rgb(173, 243, 220);
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+  }
+
+  
+  /* Make button be a square */
+  .control {
+    border: 10px solid rgb(0,0,0);
+    margin: 0.4rem;
+  
+    width: 8rem;
+    height: 8rem;
+  
+    font-size: 5rem;
+  }
+}
+
+

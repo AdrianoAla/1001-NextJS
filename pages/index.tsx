@@ -3,7 +3,9 @@ import { auth } from '../Firebase';
 import { getDatabase, ref, update, onValue } from "firebase/database";
 import { generateSequence, leadingZeroes, validateNumber, setWinStateFromSequence } from '../SetupFunctions';
 import { handlepress } from '../Input'
+import styles from '../css/app.module.css'
 import { useRouter } from 'next/router';
+import AuthRoute from '../authRoutes';
 
 
 let initialValue: string;
@@ -77,6 +79,14 @@ function getUserRank(): Promise<number> {
 
 export default function Home() {
   
+
+  useEffect(() => {
+    if (!auth.currentUser) {
+      router.push('/register');
+    }
+    initialize() 
+  }, []) 
+
     const [currentValue, setCurrentValue] = useState<string>("999999");
     const [winState, setWinState] = useState<string>("000000");
     const [hint, setHint] = useState<string>("");
@@ -85,12 +95,10 @@ export default function Home() {
     const router = useRouter();
     function setCurrentGoal (arg:string) {currentGoal = arg;}
     function getCurrentGoal () {return currentGoal;}
-
-
     
     const Logout = () => {
       auth.signOut()
-      .then(() => router.push('/login'))
+      .then(() => router.push('/register'))
       .catch(error => console.error(error));
     }
 
@@ -117,7 +125,7 @@ export default function Home() {
       getUserRank().then((r) => { setRank(r);})
     }
     
-    
+   
   
     function checkWin(state: string): void {
       console.log(auth.currentUser);
@@ -154,25 +162,23 @@ export default function Home() {
       checkWin(returnValue);
     }
     
-    useEffect(() => {
-      initialize() 
-    }, []) 
-    
     return (
+    
     <div onKeyUp={(e) => {if (e.key == "r") setCurrentValue(initialValue); else handlepress(e, currentValue, setCurrentValue, makeMove)}} tabIndex={0} className="App">
-          <div id='navbar-div'>
-            <h6 id='goal-text'>Goal: {winState}. {hint}</h6>
-            <button id='reset-button' onClick={() => {setCurrentValue(initialValue); moves +=1}}><img alt='Reset' src="https://api.serversmp.xyz/upload/1001/back.png" width='70%'></img></button>
+          <div id={styles.navbarDiv}>
+            <h6 id={styles.goalText}>Goal: {winState}. {hint}</h6>
+            <button id={styles.resetButton} onClick={() => {setCurrentValue(initialValue); moves +=1}}><img alt='Reset' src="https://api.serversmp.xyz/upload/1001/back.png" width='70%'></img></button>
           </div>
-          <h1 id='StateText'>{currentValue}</h1>
+          <h1 id={styles.stateText}>{currentValue}</h1>
           
-          <button className='control' onClick={() => makeMove(currentValue, setCurrentValue, "Sub")}> - </button>
-          <button className='control' onClick={() => makeMove(currentValue, setCurrentValue, "Add")}> + </button>
-          <button className='control' onClick={() => makeMove(currentValue, setCurrentValue, "Rot")}><img alt='R' src="https://api.serversmp.xyz/upload/1001/reset.png" width='39%'></img></button>
+          <button className={styles.control} onClick={() => makeMove(currentValue, setCurrentValue, "Sub")}> - </button>
+          <button className={styles.control} onClick={() => makeMove(currentValue, setCurrentValue, "Add")}> + </button>
+          <button className={styles.control} onClick={() => makeMove(currentValue, setCurrentValue, "Rot")}><img alt='R' src="https://api.serversmp.xyz/upload/1001/reset.png" width='39%'></img></button>
 
-          <h6 id='SpecialThanks'>Special thanks to Wam, Kabs, Khalen, Max and Prince. You guys are very cool :D</h6>          
+          <h6 id={styles.specialThanks}>Special thanks to Wam, Kabs, Khalen, Max and Prince. You guys are very cool :D</h6>          
           <h6><a href="#" onClick={Logout}>Log out</a></h6>
-          <h6 id='RankText'>Rank #{userRank}</h6>
+          <h6 id={styles.rankText}>Rank #{userRank}</h6>
         </div>
+    
     );
   }
