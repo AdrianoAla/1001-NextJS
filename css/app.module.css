@@ -6,7 +6,7 @@
 
 .App {
   font-size: 5rem;
-
+  align-items: center;
   margin: 0px;
   outline: none;
 
@@ -41,8 +41,12 @@
   width: 100%;
 }
 
+#rankText {
+  font-size: 1.4rem;
+}
+
 #stateText {
-  font-size: 3rem;
+  font-size: 6rem;
   padding: 5rem;
 }
 
