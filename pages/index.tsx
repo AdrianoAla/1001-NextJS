@@ -5,7 +5,6 @@ import { generateSequence, leadingZeroes, validateNumber, setWinStateFromSequenc
 import { handlepress } from '../Input'
 import styles from '../css/app.module.css'
 import { useRouter } from 'next/router';
-import AuthRoute from '../authRoutes';
 
 
 let initialValue: string;
