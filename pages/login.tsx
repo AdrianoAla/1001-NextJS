@@ -3,6 +3,8 @@ import { auth } from '../Firebase';
 import styles from '../css/Login.module.css';
 import { getDatabase, onValue, ref, set } from "firebase/database";
 import router, { useRouter } from 'next/router';
+import Head from 'next/head';
+import Link from 'next/link';
 
 
 export default function Login () :ReactElement {
@@ -67,11 +69,11 @@ export default function Login () :ReactElement {
         <input className={styles.uibar} name="password" autoCorrect="off" autoCapitalize="off" type="password" value={password} onChange={e => setPassword(e.target.value)} />
         
         <button className={styles.uibutton} disabled={authenticating} onClick={signInWithEmailAndPassword}>Sign In</button>
-
+        <p><Link href="/register"> Don't have an account? </Link></p>
       </div>
-      <head>
-        <title>Register</title>
-      </head>
+      <Head>
+        <title>Login</title>
+      </Head>
   </div>
     );
   };

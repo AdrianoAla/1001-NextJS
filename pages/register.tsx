@@ -3,8 +3,8 @@ import { useRouter } from 'next/router'
 import { getDatabase, onValue, ref, set } from "firebase/database";
 import { auth } from '../Firebase';
 import styles from '../css/Login.module.css';
-import head from 'next/head'
-import { Link } from 'react-router-dom';
+import Head from 'next/head'
+import Link from 'next/link';
 
 
 export default function Register () {
@@ -86,9 +86,9 @@ export default function Register () {
 
     return (
         <>
-          <head>
+          <Head>
               <title>Register</title>
-          </head>
+          </Head>
         <div>
           <div id={styles.container}>
             {(error ? <h6 className={styles.error}>{error}</h6> : null)}
@@ -108,6 +108,7 @@ export default function Register () {
             
             <button className={styles.uibutton} disabled={authenticating} onClick={signUpWithEmailAndPassword}>Sign Up</button>
             
+            <p><Link href="/login"> Already have an account? </Link></p>
 
           </div>
           

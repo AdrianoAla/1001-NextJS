@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useRouter } from 'next/router'
+import router, { useRouter } from 'next/router'
 import { auth } from './Firebase';
 import { Navigate } from 'react-router';
 export interface IAuthRouteProps { }
@@ -11,6 +11,13 @@ export default function  AuthRoute({ children }): any {
     useEffect(() => {
         auth.onAuthStateChanged(user => {
             if (user) {
+                if (!user.emailVerified) {
+                    user.sendEmailVerification();
+                }
+                console.log("User detected, redirecting ...");
+            }
+            else {
+                console.warn("User not detected! redirecting ...");
             }
             setLoading(false);
         })}, []);

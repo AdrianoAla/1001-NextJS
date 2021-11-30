@@ -81,9 +81,6 @@ export default function Home() {
   
 
   useEffect(() => {
-    if (!auth.currentUser) {
-      router.push('/register');
-    }
     initialize() 
   }, []) 
 
@@ -161,6 +158,11 @@ export default function Home() {
       checkWin(returnValue);
     }
     
+    if (!auth.currentUser) {
+      router.push('/register');
+      return <div></div>
+    }
+    else {
     return (
     
     <div onKeyUp={(e) => {if (e.key == "r") setCurrentValue(initialValue); else handlepress(e, currentValue, setCurrentValue, makeMove)}} tabIndex={0} className="App">
@@ -180,4 +182,5 @@ export default function Home() {
         </div>
     
     );
+    }
   }
