@@ -55,25 +55,24 @@ export default function Login () :ReactElement {
           }
       });
     }
-    return (
-     
-      <div>
-      <div id={styles.container}>
-        {(error ? <h6 className={styles.error}>{error}</h6> : null)}
-        <h1 className={styles.logintext}>Sign In</h1>
-        
-        <h1 className={styles.login}>Email</h1>
-        <input className={styles.uibar} name="email" autoCorrect="off" autoCapitalize="off" type="email" value={email} onChange={e => setEmail(e.target.value)} />
+    return ( 
+      <>
+        <Head>
+          <title>Login</title>
+        </Head>
+        <div id={styles.container}>
+          {(error ? <h6 className={styles.error}>{error}</h6> : null)}
+          <h1 className={styles.logintext}>Sign In</h1>
+          
+          <h1 className={styles.login}>Email</h1>
+          <input className={styles.uibar} name="email" autoCorrect="off" autoCapitalize="off" type="email" value={email} onChange={e => setEmail(e.target.value)} />
 
-        <h1 className={styles.login}>Password</h1>
-        <input className={styles.uibar} name="password" autoCorrect="off" autoCapitalize="off" type="password" value={password} onChange={e => setPassword(e.target.value)} />
-        
-        <button className={styles.uibutton} disabled={authenticating} onClick={signInWithEmailAndPassword}>Sign In</button>
-        <p><Link href="/register"> Don't have an account? </Link></p>
-      </div>
-      <Head>
-        <title>Login</title>
-      </Head>
-  </div>
+          <h1 className={styles.login}>Password</h1>
+          <input className={styles.uibar} name="password" autoCorrect="off" autoCapitalize="off" type="password" value={password} onChange={e => setPassword(e.target.value)} />
+          
+          <button className={styles.uibutton} disabled={authenticating} onClick={signInWithEmailAndPassword}>Sign In</button>
+          <p><Link href="/register"> Don't have an account? </Link></p>
+        </div>
+      </>
     );
   };

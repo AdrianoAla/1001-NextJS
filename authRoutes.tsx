@@ -12,6 +12,7 @@ export default function  AuthRoute({ children }): any {
         auth.onAuthStateChanged(user => {
             if (user) {
                 if (!user.emailVerified) {
+                    alert ("Please verify your email address! Scores will not be submitted until you do so.")
                     user.sendEmailVerification();
                 }
                 console.log("User detected, redirecting ...");

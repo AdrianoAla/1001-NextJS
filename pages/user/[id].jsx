@@ -6,7 +6,7 @@ export default function User({user}) {
     
     return (
         <div>
-            <h1>{id}</h1>
+            <h1>Get out of here! this is a work in progress :)</h1>
         </div>
     )
 }
