@@ -47,9 +47,8 @@ function calculateScore(): Promise<number>  {
     }) 
   })
 }
-
-const addPlaycount: Promise<any> = new Promise((resolve) => {
-  if (auth.currentUser?.uid !== undefined) {
+function addPlaycount() : Promise<any> {
+  return new Promise((resolve) => {
     const updates: any = {};
     onValue(ref(db, `Leaderboard/${auth.currentUser?.uid}`), (snapshot) => {
         if (snapshot.val().playcount === undefined) {
@@ -57,10 +56,9 @@ const addPlaycount: Promise<any> = new Promise((resolve) => {
           } else {
             updates[`/Leaderboard/${auth.currentUser?.uid}/playcount`] = snapshot.val().playcount + 1;
         }     
+        resolve (updates)
     });
-    update(ref(db), updates)
-  }
-})
+})}
 
 function getUserRank(): Promise<number> {
     return new Promise((resolve) => {
@@ -112,8 +110,8 @@ export default function Home() {
     }
 
     function initialize(): void { 
-      resetVariables();
-      addPlaycount.then(() => {})
+      resetVariables()
+      addPlaycount().then((u) => { update(ref(db), u)})
       const seq: string[] = generateSequence(5);
       setWinStateFromSequence(seq, makeMove, getCurrentGoal, setCurrentGoal)
       setWinState(currentGoal );
