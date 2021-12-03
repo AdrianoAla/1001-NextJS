@@ -31,7 +31,7 @@ export default function User({user}) {
             const userObjects = snapshot.val();
             const users = Object.keys(snapshot.val()).sort((a, b) => userObjects[b].score - userObjects[a].score);
             const userIndex = users.indexOf(id);
-
+            
             if (userIndex === -1) {
                 resolve({
                     res: 404,
@@ -60,7 +60,7 @@ export default function User({user}) {
         })
 
         if (res === 404) {
-            setTitle("User Not Found");
+            setTitle("User Not Found - 1001");
         } else if (res === 200) {
             setTitle(`${name}'s Profile - 1001`);
         }
@@ -72,7 +72,7 @@ export default function User({user}) {
                 <Head>
                     <title>{title}</title>
                 </Head>
-                <h1>Not Found</h1>
+                <h1>User does not exist or has not submitted any scores!</h1>
             </>
         )
     }

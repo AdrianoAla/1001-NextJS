@@ -87,7 +87,7 @@ export default function Register () {
     return (
         <>
           <Head>
-              <title>Register</title>
+              <title>Register - 1001</title>
           </Head>
         <div>
           <div id={styles.container}>

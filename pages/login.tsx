@@ -58,7 +58,7 @@ export default function Login () :ReactElement {
     return ( 
       <>
         <Head>
-          <title>Login</title>
+          <title>Login - 1001</title>
         </Head>
         <div id={styles.container}>
           {(error ? <h6 className={styles.error}>{error}</h6> : null)}
