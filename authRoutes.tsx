@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import router, { useRouter } from 'next/router'
 import { auth } from './Firebase';
 import { Navigate } from 'react-router';
+import Head from 'next/head'
 export interface IAuthRouteProps { }
 
 export default function  AuthRoute({ children }): any {
@@ -24,7 +25,14 @@ export default function  AuthRoute({ children }): any {
         })}, []);
     
     if (loading) {
-        return <div>Loading...</div>
+        return (
+        <>
+            <Head>
+                <title>1001</title>
+            </Head>
+            <div>Loading...</div>
+        </>
+            )
     }
     
     return (
