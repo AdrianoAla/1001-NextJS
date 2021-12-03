@@ -44,7 +44,7 @@ export default function User({user}) {
                 resolve({
                     res: 200,
                     name: snapshot.val()[id].name,
-                    rank: (userIndex + 1).toString(),
+                    rank: `${(userIndex + 1).toString()}`,
                     score: snapshot.val()[id].score.toString(),
                 });
             }
@@ -83,7 +83,8 @@ export default function User({user}) {
                 <title>{title}</title>
             </Head>
             <div>
-                <h1>{name}<br/>#{rank} | {score}</h1>
+                <h1>{name}</h1>
+                <h3>Rank #{rank}<br/>Score: {score} points</h3>
             </div>
         </>
     )

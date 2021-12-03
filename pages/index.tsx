@@ -6,6 +6,7 @@ import { handlepress } from '../Input'
 import styles from '../css/app.module.css'
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import Link from 'next/link';
 
 
 let initialValue: string;
@@ -178,8 +179,8 @@ export default function Home() {
         <button className={styles.control} onClick={() => makeMove(currentValue, setCurrentValue, "Rot")}><img alt='R' src="https://api.serversmp.xyz/upload/1001/reset.png" width='39%'></img></button>
 
         <h6 id={styles.specialThanks}>Special thanks to Wam, Kabs, Khalen, Max and Prince. You guys are very cool :D</h6>          
-        <h6><a href="#" onClick={Logout}>Log out</a></h6>
-        <h6 id={styles.rankText}>Rank #{userRank}</h6>
+        <h6 id={styles.rankText}><Link href={`user/${auth.currentUser.uid}`} ><a>Rank #{userRank}</a></Link> | <Link href="leaderboard">Leaderboard</Link> | <Link href="search">Search</Link></h6>
+        <h6 id={styles.logOut}><a href="#" onClick={Logout}>Log out</a></h6>
       </div>
     </>
     );

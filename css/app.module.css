@@ -78,6 +78,9 @@
   background-color: rgba(0, 0, 0, 0.250);
 }
 
+#logOut {
+  font-size: 1.5rem;
+}
 
 @media (max-width : 480px) {
   #resetButton img {
