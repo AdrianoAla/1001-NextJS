@@ -2,7 +2,7 @@ import  { useState } from 'react';
 import { useRouter } from 'next/router'
 import { getDatabase, onValue, ref, set } from "firebase/database";
 import { auth } from '../Firebase';
-import styles from '../css/Login.module.css';
+import styles from '../css/login.module.css';
 import Head from 'next/head'
 import Link from 'next/link';
 
@@ -89,26 +89,20 @@ export default function Register () {
           <Head>
               <title>Register - 1001</title>
           </Head>
-        <div>
+        <div id={styles.topDiv}>
+
           <div id={styles.container}>
             {(error ? <h6 className={styles.error}>{error}</h6> : null)}
             <h1 className={styles.logintext}>Sign Up</h1>
             
-            <h1 className={styles.login}>Email</h1>
-            <input className={styles.uibar} name="email" autoCorrect="off" autoCapitalize="off" type="email" value={email} onChange={e => setEmail(e.target.value)} />
-            
-            <h1 className={styles.login}>Username</h1>
-            <input className={styles.uibar} name="username" autoCorrect="off" autoCapitalize="off" type="text" value={username} onChange={e => setUsername(e.target.value)} />
-
-            <h1 className={styles.login}>Password</h1>
-            <input className={styles.uibar} name="password" autoCorrect="off" autoCapitalize="off" type="password" value={password} onChange={e => setPassword(e.target.value)} />
-
-            <h1 className={styles.login}>Confirm Password</h1>
-            <input className={styles.uibar} name="confirmpassword" autoCorrect="off" autoCapitalize="off" type="password" value={confirm} onChange={e => setConfirm(e.target.value)} />
+            <input className={styles.uibar} placeholder='Email' name="email" autoCorrect="off" autoCapitalize="off" type="email" value={email} onChange={e => setEmail(e.target.value)} />
+            <input className={styles.uibar} placeholder='Username' name="username" autoCorrect="off" autoCapitalize="off" type="text" value={username} onChange={e => setUsername(e.target.value)} />
+            <input className={styles.uibar} placeholder='Password' name="password" autoCorrect="off" autoCapitalize="off" type="password" value={password} onChange={e => setPassword(e.target.value)} />
+            <input className={styles.uibar} placeholder='Confirm' name="confirmpassword" autoCorrect="off" autoCapitalize="off" type="password" value={confirm} onChange={e => setConfirm(e.target.value)} />
             
             <button className={styles.uibutton} disabled={authenticating} onClick={signUpWithEmailAndPassword}>Sign Up</button>
             
-            <p><Link href="/login"> Already have an account? </Link></p>
+            <p id={styles.toOther}><Link href="/login"> Already have an account? </Link></p>
 
           </div>
           

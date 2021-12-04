@@ -9,11 +9,21 @@
     border-radius: 1rem;
 }
 
-#container {
+#topDiv {
     width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+}
+#container {
+    background-color: rgb(113, 185, 161);
+    border: 5px solid rgb(74, 135, 115);;
+    width: clamp(30%, 400px, 90%);
+    margin: auto;
+    padding-bottom: 2.3rem;
+    margin-top: 2rem;
     height: 100%;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -34,28 +44,17 @@
 }
 
 .uibar {
-    width: auto;
-    float: right;
     font-size: 1rem;
-    height: auto;
-    padding-bottom: 10px;
-    width: 20rem;
-    margin: 0px;
-    vertical-align: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: clamp(1rem, 17rem, 20rem);
 }
 
-.toOther {
+#toOther {
+    padding-top: 1rem;
     font-size: 1rem;
 }
 
-.login {
-    font-size: 1rem;
-    padding: 1rem;
-    /*padding-top: 0.5rem;*/
-    text-align: left;
-    align-items: left;
-    float: left;
-}
 
 .logintext {
     font-size: 4rem;
@@ -66,11 +65,6 @@
 }
 
 @media (max-width : 480px) {
-    .login {
-        font-size: 1.5rem;
-        padding-bottom: 0.3rem;
-        float: left;
-    }
 
     .logintext {
         font-size: 3rem;

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { getDatabase, ref, onValue } from "firebase/database";
 import Head from 'next/head';
+import styles from '../css/user.module.css';
 
 
 export default function User() {
@@ -22,8 +23,8 @@ export default function User() {
             users.map(user => {
                 // for the user, see if it starts with the search term
                 if (user.toLowerCase().startsWith(id.toLowerCase())) {
+                    if (results.length < 5) setResults(results => [...results, {"name":user, "id":snapshot.val()[user],}]);
 
-                    setResults(results => [...results, {"name":user, "id":snapshot.val()[user],}]);
                 }
             })
         });
@@ -34,18 +35,20 @@ export default function User() {
         <Head>
             <title>User Search - 1001</title>
         </Head>
-        <div>
-        <h1>User Search</h1>
-        <input autoCorrect="off" autoCapitalize="off" type="text" placeholder="Search for a user" value={search} onChange={e => {setSearch(e.target.value); findUsers(e.target.value)}} />
-        <ul key={"List"}>
-            {results.map(result => {
-                return (
-                    <p key={result.id} ><Link href={`user/${result.id}`}>{result.name}</Link></p>
-                )
-                //const link = `/user/${result.id}`;
-                //<Link href={link}><a>{result.name}</a></Link>
-            })}
-        </ul>
+        <div id={styles.topDiv}>
+            <div id={styles.container}>
+                <h1 id={styles.topText}>User Search</h1>
+                <input id={styles.searchBar} autoCorrect="off" autoCapitalize="off" autoComplete='off' type="search" placeholder="Search for a user" value={search} onChange={e => {setSearch(e.target.value); findUsers(e.target.value)}} />
+                <ul key={"List"}>
+                    {results.map(result => {
+                        return (
+                            <p className={styles.result} key={result.id} ><Link href={`user/${result.id}`}>{result.name}</Link></p>
+                        )
+                        //const link = `/user/${result.id}`;
+                        //<Link href={link}><a>{result.name}</a></Link>
+                    })}
+                </ul>
+            </div>
         </div>
     </>
   );

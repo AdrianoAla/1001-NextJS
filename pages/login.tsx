@@ -1,6 +1,6 @@
 import  { ReactElement, useState } from 'react';
 import { auth } from '../Firebase';
-import styles from '../css/Login.module.css';
+import styles from '../css/login.module.css';
 import { getDatabase, onValue, ref, set } from "firebase/database";
 import router, { useRouter } from 'next/router';
 import Head from 'next/head';
@@ -62,16 +62,14 @@ export default function Login () :ReactElement {
         </Head>
         <div id={styles.container}>
           {(error ? <h6 className={styles.error}>{error}</h6> : null)}
-          <h1 className={styles.logintext}>Sign In</h1>
+          <h1 className={styles.logintext}>Log In</h1>
           
-          <h1 className={styles.login}>Email</h1>
-          <input className={styles.uibar} name="email" autoCorrect="off" autoCapitalize="off" type="email" value={email} onChange={e => setEmail(e.target.value)} />
+          <input className={styles.uibar} placeholder='Email' name="email" autoCorrect="off" autoCapitalize="off" type="email" value={email} onChange={e => setEmail(e.target.value)} />
 
-          <h1 className={styles.login}>Password</h1>
-          <input className={styles.uibar} name="password" autoCorrect="off" autoCapitalize="off" type="password" value={password} onChange={e => setPassword(e.target.value)} />
+          <input className={styles.uibar} placeholder='Password' name="password" autoCorrect="off" autoCapitalize="off" type="password" value={password} onChange={e => setPassword(e.target.value)} />
           
           <button className={styles.uibutton} disabled={authenticating} onClick={signInWithEmailAndPassword}>Sign In</button>
-          <p><Link href="/register"> Don't have an account? </Link></p>
+          <p id={styles.toOther}><Link href="/register"> Don't have an account? </Link></p>
         </div>
       </>
     );

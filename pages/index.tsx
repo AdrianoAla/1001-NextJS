@@ -85,7 +85,6 @@ export default function Home() {
 
     const [currentValue, setCurrentValue] = useState<string>("999999");
     const [winState, setWinState] = useState<string>("000000");
-    const [hint, setHint] = useState<string>("");
     const [userRank, setRank] = useState<number>(-1);
     
     const router = useRouter();
@@ -99,7 +98,6 @@ export default function Home() {
     }
 
     const resetVariables = () => {
-      setHint("It could be any move.");
       const start = validateNumber(String(Math.floor( Math.random()*1000000)));
       setCurrentValue  (start);
       initialValue =   (start);
@@ -142,15 +140,12 @@ export default function Home() {
       switch (move) {
         case "Rot":
           returnValue = leadingZeroes (value[value.length - 1] + value.slice(0,5));
-          setHint("It could be any move.")
           break;
         case "Add":
           returnValue = validateNumber(String(parseInt(value) + 1001));
-          setHint("Can't be subtraction.")
           break;
         case "Sub":
           returnValue = validateNumber(String(parseInt(value) - 1001));
-          setHint("Can't be addition.")
           break;
       }
       callback (returnValue === "-1" ? value : returnValue);
@@ -169,7 +164,7 @@ export default function Home() {
       </Head>
       <div onKeyUp={(e) => {if (e.key == "r") setCurrentValue(initialValue); else handlepress(e, currentValue, setCurrentValue, makeMove)}} tabIndex={0} className="App">
         <div id={styles.navbarDiv}>
-          <h6 id={styles.goalText}>Goal: {winState}. {hint}</h6>
+          <h6 id={styles.goalText}>Goal: {winState}</h6>
           <button id={styles.resetButton} onClick={() => {setCurrentValue(initialValue); moves +=1}}><img alt='Reset' src="https://api.serversmp.xyz/upload/1001/back.png" width='70%'></img></button>
         </div>
         <h1 id={styles.stateText}>{currentValue}</h1>

@@ -9,12 +9,10 @@
   align-items: center;
   margin: 0px;
   outline: none;
-
-  position: absolute;
   text-align: center;
   background-color: rgb(173, 243, 220);
   width: 99%;
-  height: 98%;
+  height: 100%;
 }
 
 #goalText {
@@ -47,7 +45,8 @@
 
 #stateText {
   font-size: 6rem;
-  padding: 5rem;
+  padding-top: 5rem;
+  padding-bottom: 2rem;
 }
 
 #specialThanks {
@@ -89,12 +88,11 @@
   #goalText {
     font-size: 1rem;
   }
-  #stateText {
-    padding-left: 0px;
-    padding-right: 0px;
-    padding-bottom: 1rem;
-    padding-top: 7rem;
+
+  #stateText{
+    color: rebeccapurple;
   }
+
   #specialThanks {
     padding: 10px;
     text-align: center;
