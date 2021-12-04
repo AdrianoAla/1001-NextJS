@@ -44,8 +44,6 @@ export default function User() {
                         return (
                             <p className={styles.result} key={result.id} ><Link href={`user/${result.id}`}>{result.name}</Link></p>
                         )
-                        //const link = `/user/${result.id}`;
-                        //<Link href={link}><a>{result.name}</a></Link>
                     })}
                 </ul>
             </div>
