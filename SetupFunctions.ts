@@ -26,7 +26,7 @@ export function generateSequence (len: number): string[] {
       pmove = output;
       seq = [...seq, output];
     }
-    //console.log(`SEQUENCE: ${seq}`);
+    console.log(`SEQUENCE: ${seq}`);
     return seq;
   }
   
