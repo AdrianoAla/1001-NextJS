@@ -11,6 +11,17 @@ body {
     text-align: center;
 }
 
+a {
+    text-decoration: none;
+    color: rgb(92, 93, 92);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+
 h6 {
     font-size: 2.3rem;
     font-weight: bold;

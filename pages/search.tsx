@@ -36,9 +36,12 @@ export default function User() {
             <title>User Search - 1001</title>
         </Head>
         <div id={styles.topDiv}>
-            <div id={styles.container}>
+            <div className={styles.container}>
                 <h1 id={styles.topText}>User Search</h1>
                 <input id={styles.searchBar} autoCorrect="off" autoCapitalize="off" autoComplete='off' type="search" placeholder="Search for a user" value={search} onChange={e => {setSearch(e.target.value); findUsers(e.target.value)}} />
+            </div>
+            {results.length > 0 ? (
+            <div className={styles.container}>
                 <ul key={"List"}>
                     {results.map(result => {
                         return (
@@ -46,6 +49,10 @@ export default function User() {
                         )
                     })}
                 </ul>
+            </div>
+            ) : (<></>)}
+            <div className={styles.container}>
+                <Link href={"/"}><a><h1 className={styles.nav}>1001</h1></a></Link><h3 className={styles.rank}>By Arpi</h3>
             </div>
         </div>
     </>
