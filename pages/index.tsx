@@ -1,6 +1,6 @@
 import { ReactElement, useEffect, useState } from 'react';
 import { auth } from '../Firebase';
-import { getDatabase, ref, update, onValue } from "firebase/database";
+import { getDatabase, ref, update, onValue, get } from "firebase/database";
 import { generateSequence, leadingZeroes, validateNumber, setWinStateFromSequence } from '../SetupFunctions';
 import { handlepress } from '../Input'
 import styles from '../css/app.module.css'
@@ -52,13 +52,15 @@ function calculateScore(): Promise<number>  {
 function addPlaycount() : Promise<any> {
   return new Promise((resolve) => {
     const updates: any = {};
-    onValue(ref(db, `Leaderboard/${auth.currentUser?.uid}`), (snapshot) => {
+    get(ref(db, `Leaderboard/${auth.currentUser?.uid}`)).then((snapshot) => {
+      if (snapshot.val()) {
         if (snapshot.val().playcount === undefined) {
           updates[`/Leaderboard/${auth.currentUser?.uid}/playcount`] = 1;
           } else {
             updates[`/Leaderboard/${auth.currentUser?.uid}/playcount`] = snapshot.val().playcount + 1;
         }     
         resolve (updates)
+      }
     });
 })}
 

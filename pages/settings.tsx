@@ -34,7 +34,7 @@ export default function Settings() {
     }
 
     const changeUsername = (username, pw) => {
-        console.log(auth.currentUser.displayName)
+        console.log(`CURRENT USERNAME !! ${auth.currentUser.displayName}`)
 
         auth.signInWithEmailAndPassword(auth.currentUser.email, pw).then(() => {
             const db = getDatabase()
@@ -57,12 +57,14 @@ export default function Settings() {
                     auth.currentUser.updateProfile({
                         displayName: u
                     }).then(() => {
-                        const lbRef = ref(db, `Leaderboards/${auth.currentUser.uid}/`)
+                        const lbRef = ref(db, `Leaderboard/${auth.currentUser.uid}`)
 
                         update(lbRef, {"name":username})
                         
 
                         alert('Username updated successfully')
+                        console.log(`NEW USERNAME !! ${auth.currentUser.displayName}`)
+
                         return
                     }).catch((error) => {
                         alert("An error has occured. Please try again later.")
