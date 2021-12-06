@@ -67,7 +67,7 @@ export default function Login () :ReactElement {
           <input className={styles.uibar} placeholder='Email' name="email" autoCorrect="off" autoCapitalize="off" type="email" value={email} onChange={e => setEmail(e.target.value)} />
 
           <input className={styles.uibar} placeholder='Password' name="password" autoCorrect="off" autoCapitalize="off" type="password" value={password} onChange={e => setPassword(e.target.value)} />
-          
+          <br />
           <button className={styles.uibutton} disabled={authenticating} onClick={signInWithEmailAndPassword}>Sign In</button>
           <p id={styles.toOther}><Link href="/register"> Don't have an account? </Link></p>
         </div>

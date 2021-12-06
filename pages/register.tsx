@@ -100,6 +100,7 @@ export default function Register () {
             <input className={styles.uibar} placeholder='Password' name="password" autoCorrect="off" autoCapitalize="off" type="password" value={password} onChange={e => setPassword(e.target.value)} />
             <input className={styles.uibar} placeholder='Confirm' name="confirmpassword" autoCorrect="off" autoCapitalize="off" type="password" value={confirm} onChange={e => setConfirm(e.target.value)} />
             
+            <br />
             <button className={styles.uibutton} disabled={authenticating} onClick={signUpWithEmailAndPassword}>Sign Up</button>
             
             <p id={styles.toOther}><Link href="/login"> Already have an account? </Link></p>

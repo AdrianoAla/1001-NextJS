@@ -91,11 +91,7 @@ export default function Home() {
     function setCurrentGoal (arg:string) {currentGoal = arg;}
     function getCurrentGoal () {return currentGoal;}
     
-    const Logout = () => {
-      auth.signOut()
-      .then(() => router.push('/register'))
-      .catch(error => console.error(error));
-    }
+
 
     const resetVariables = () => {
       const start = validateNumber(String(Math.floor( Math.random()*1000000)));
@@ -153,7 +149,7 @@ export default function Home() {
     }
     
     if (!auth.currentUser) {
-      router.push('/register');
+      router.push('/login');
       return <div></div>
     }
     else {
@@ -175,7 +171,7 @@ export default function Home() {
 
         <h6 id={styles.specialThanks}>Special thanks to Wam, Kabs, Khalen, Max and Prince. You guys are very cool :D</h6>          
         <h6 id={styles.rankText}><Link href={`user/${auth.currentUser.uid}`} ><a>Rank #{userRank}</a></Link> | <Link href="leaderboard">Leaderboard</Link> | <Link href="search">Search</Link></h6>
-        <h6 id={styles.logOut}><a href="#" onClick={Logout}>Log out</a></h6>
+        <h6 id={styles.logOut}><Link href="specialthanks"><a>Special Thanks</a></Link> | <Link href="settings"><a>Settings</a></Link> </h6>
       </div>
     </>
     );

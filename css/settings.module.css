@@ -1,0 +1,46 @@
+/* Settings */
+
+#topDiv {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+  }
+  
+  .container {
+    background-color: rgb(113, 185, 161);
+    border: 5px solid rgb(74, 135, 115);;
+    width: clamp(30%, 400px, 90%);
+    margin: auto;
+    padding: 1rem;
+    padding-bottom: 1rem;
+    margin-top: 0.2rem;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .uibar {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: clamp(1rem, 17rem, 20rem);
+}
+
+.uibutton {
+    padding: 11px;
+}
+
+.settingsSection {
+    padding: 0.6rem;
+}
+
+.sectionTitle {
+    margin-bottom: 10px;
+}
+
+
+#title {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
