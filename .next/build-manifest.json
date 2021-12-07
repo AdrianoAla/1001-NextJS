@@ -30,20 +30,20 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/leaderboard": [
+    "/login": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/leaderboard.js"
+      "static/chunks/pages/login.js"
     ],
-    "/search": [
+    "/settings": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/search.js"
+      "static/chunks/pages/settings.js"
     ],
-    "/user/[id]": [
+    "/specialthanks": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/user/[id].js"
+      "static/chunks/pages/specialthanks.js"
     ]
   },
   "ampFirstPages": []

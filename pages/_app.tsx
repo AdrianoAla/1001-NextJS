@@ -4,7 +4,7 @@ import Head from 'next/head'
 
 export default function MyApp({ Component, pageProps }) {
     return (
-    <>
+    <html lang='en-US'>
       <Head>
         <meta property="og:locale" content="en_US" />
         <meta property="og:title" content="1001" />
@@ -17,6 +17,6 @@ export default function MyApp({ Component, pageProps }) {
       <AuthRoute>
         <Component {...pageProps} />
       </AuthRoute>
-    </>
+    </html>
     )
   }
