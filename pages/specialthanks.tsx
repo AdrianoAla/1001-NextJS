@@ -15,7 +15,7 @@ export default function SpecialThanks() {
                 </h4>
             </div>
             <div className={styles.container}>
-                <Link href={"/"}><a><h1 className={styles.nav}>1001</h1></a></Link><h3 className={styles.rank}>By Arpi</h3>
+                <Link href={"/"}><a><h1 className={styles.nav}>1001</h1></a></Link><h3 className={styles.inline}>By Arpi</h3>
             </div>
         </>
     )

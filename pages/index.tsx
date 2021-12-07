@@ -162,7 +162,7 @@ export default function Home() {
       </Head>
       <div onKeyUp={(e) => {if (e.key == "r") setCurrentValue(initialValue); else handlepress(e, currentValue, setCurrentValue, makeMove)}} tabIndex={0} className="App">
         <div id={styles.navbarDiv}>
-          <h6 id={styles.goalText}>Goal: {winState}.</h6>
+          <h6 id={styles.goalText}>Goal: {winState}</h6>
           <button id={styles.resetButton} onClick={() => {setCurrentValue(initialValue); moves +=1}}><img alt='Reset' src="https://api.serversmp.xyz/upload/1001/back.png" width='70%'></img></button>
         </div>
         <h1 id={styles.stateText}>{currentValue}</h1>

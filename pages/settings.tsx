@@ -101,7 +101,7 @@ export default function Settings() {
                     <div className={styles.settingsSection}>                    
                         <h2 className={styles.sectionTitle}>Change Username</h2>
                             <input className={styles.uibar} name="Password" type="password" autoCorrect="off" autoCapitalize="off" placeholder="Current password" value={passwordForCU} onChange={(e) => setPasswordForCU(e.target.value)} />
-                            <input className={styles.uibar} name="Change Username" type="text" autoCorrect="off" autoCapitalize="off" placeholder="New username" value={newUsername} onChange={(e) => setNewUsername(e.target.value)} />
+                            <input className={styles.uibar} name="Change Username" type="text" autoComplete='off' autoCorrect="off" autoCapitalize="off" placeholder="New username" value={newUsername} onChange={(e) => setNewUsername(e.target.value)} />
                             <br/>
                             <button className={styles.uibutton} onClick={() => changeUsername(newUsername, passwordForCU)}>Change</button>
                     </div>
@@ -116,6 +116,10 @@ export default function Settings() {
                     </div>
 
                     <button className={styles.uibutton} onClick={Logout}>Log out</button>
+                </div>
+                
+                <div className={styles.container}>
+                    <Link href={"/"}><a><h1 className={styles.inline}>1001</h1></a></Link><h3 className={styles.inline}>By Arpi</h3>
                 </div>
             </div>
         </>
