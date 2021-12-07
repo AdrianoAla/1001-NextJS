@@ -49,7 +49,7 @@ export default function User({user}) {
                 resolve({
                     res: 200,
                     name: snapshot.val()[id].name,
-                    rank: `${(userIndex + 1).toString()}`,
+                    rank: snapshot.val()[id].score == 0 ? `Null` : `${(userIndex + 1).toString()}`,
                     score: snapshot.val()[id].score.toString(),
                     playcount: snapshot.val()[id].playcount.toString(),
                 });

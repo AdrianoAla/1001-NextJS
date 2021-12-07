@@ -66,6 +66,13 @@ export default function Register () {
                     displayName: username,
                   })
                   .then(() => {
+
+                    set (ref(db, `Leaderboards/${username}`), {
+                      name: username,
+                      score: 0,
+                      playcount: 0,
+                    })
+
                     router.push('/');
                     return
                   })
