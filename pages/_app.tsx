@@ -6,6 +6,7 @@ export default function MyApp({ Component, pageProps }) {
     return (
     <html lang='en-US'>
       <Head>
+        <meta name="google-site-verification" content="xumJ3-kn2Ksq5-JmkXXJ2seuI90nDpOzr6R0bsh9PxA" />
         <meta property="og:locale" content="en_US" />
         <meta property="og:title" content="1001" />
         <meta property="og:type" content="website" />
