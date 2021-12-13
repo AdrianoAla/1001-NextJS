@@ -60,7 +60,7 @@ export default function Login () :ReactElement {
         <Head>
           <title>Login - 1001</title>
         </Head>
-        <div id={styles.container}>
+        <div className={styles.container}>
           {(error ? <h6 className={styles.error}>{error}</h6> : null)}
           <h1 className={styles.logintext}>Log In</h1>
           
@@ -69,7 +69,12 @@ export default function Login () :ReactElement {
           <input className={styles.uibar} placeholder='Password' name="password" autoCorrect="off" autoCapitalize="off" type="password" value={password} onChange={e => setPassword(e.target.value)} />
           <br />
           <button className={styles.uibutton} disabled={authenticating} onClick={signInWithEmailAndPassword}>Sign In</button>
-          <p id={styles.toOther}><Link href="/register"> Don't have an account? </Link></p>
+          <p className={styles.toOther}><Link href="/register"> Don't have an account? </Link></p>
+          <p className={styles.toOther}><Link href="/forgot"> Forgot your password? </Link></p>
+
+        </div>
+        <div className={styles.container}>
+          <Link href={"/"}><a><h1 className={styles.inline}>1001</h1></a></Link><h3 className={styles.inline}>By Arpi</h3>
         </div>
       </>
     );

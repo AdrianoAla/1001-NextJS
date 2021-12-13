@@ -7,12 +7,12 @@ import Link from 'next/link';
 
 
 export default function Leaderboards(): JSX.Element {
+    const db = getDatabase();
     
     const [sortedTop10, setSortedTop10] = useState<any>({});
     const [top10Ids, setTop10Ids] = useState<any>([]);
 
     useEffect(() => {
-        const db = getDatabase()
         const LeaderboardRef = query(ref (db, `Leaderboard`), orderByChild("score"), limitToLast(10))
         onValue(LeaderboardRef, (snapshot) => {
             setSortedTop10(Object.values(snapshot.val()).sort((a:any, b:any) => b.score - a.score));
@@ -28,7 +28,7 @@ export default function Leaderboards(): JSX.Element {
             </Head>
             <div id={styles.topDiv}>
                 <div className={styles.container}>
-                    <h4>Leaderboard</h4>
+                    <h1 id={styles.leaderboardTitle}>Leaderboard</h1>
                     <h1>
                         {
                             Object.keys(sortedTop10).length === 0 ? <p>Loading...</p> : Object.keys(sortedTop10).map((key) => {

@@ -16,18 +16,6 @@
     text-align: center;
     margin: auto;
 }
-#container {
-    background-color: rgb(113, 185, 161);
-    border: 5px solid rgb(74, 135, 115);;
-    width: clamp(30%, 400px, 90%);
-    margin: auto;
-    padding-bottom: 2.3rem;
-    margin-top: 2rem;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-}
-
 
 .uibutton {
     background-color: rgb(173, 243, 220);
@@ -50,8 +38,8 @@
     width: clamp(1rem, 17rem, 20rem);
 }
 
-#toOther {
-    padding-top: 1rem;
+.toOther {
+    padding-top: 0.3rem;
     font-size: 1rem;
 }
 
@@ -89,3 +77,20 @@
     height: 98%;
 }
 
+
+.container {
+    background-color: rgb(113, 185, 161);
+    border: 5px solid rgb(74, 135, 115);;
+    width: clamp(30%, 400px, 90%);
+    margin: auto;
+    padding: 1rem;
+    padding-bottom: 1rem;
+    margin-top: 0.2rem;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav, .inline {
+    display: inline;
+}

@@ -98,7 +98,7 @@ export default function Register () {
           </Head>
         <div id={styles.topDiv}>
 
-          <div id={styles.container}>
+          <div className={styles.container}>
             {(error ? <h6 className={styles.error}>{error}</h6> : null)}
             <h1 className={styles.logintext}>Sign Up</h1>
             
@@ -110,8 +110,13 @@ export default function Register () {
             <br />
             <button className={styles.uibutton} disabled={authenticating} onClick={signUpWithEmailAndPassword}>Sign Up</button>
             
-            <p id={styles.toOther}><Link href="/login"> Already have an account? </Link></p>
+            <p className={styles.toOther}><Link href="/login"> Already have an account? </Link></p>
+            <p className={styles.toOther}><Link href="/forgot"> Forgot your password? </Link></p>
 
+
+          </div>
+          <div className={styles.container}>
+                    <Link href={"/"}><a><h1 className={styles.inline}>1001</h1></a></Link><h3 className={styles.inline}>By Arpi</h3>
           </div>
           
       </div>

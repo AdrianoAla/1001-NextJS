@@ -18,6 +18,12 @@
     align-items: center;
   }
 
+  #leaderboardTitle {
+      font-size: 2.6rem;
+      margin-bottom: 0.5rem;
+}
+
+
 .nav {
     display: inline;
 }

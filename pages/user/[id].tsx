@@ -29,7 +29,7 @@ export default function User({user}) {
 
     
 
-    function getUserRank(): Promise<UserObject> {
+    function getUserData(): Promise<UserObject> {
         return new Promise((resolve) => {
         onValue(ref(db, "Leaderboard"), (snapshot) => {
             const userObjects = snapshot.val();
@@ -58,7 +58,7 @@ export default function User({user}) {
       });
     }
     useEffect(() => {
-        getUserRank().then(({res, rank, score, name, playcount}) => {
+        getUserData().then(({res, rank, score, name, playcount}) => {
             setName(name);
             setRes(res)
             setRank(rank);
