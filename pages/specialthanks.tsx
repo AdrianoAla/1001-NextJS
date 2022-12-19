@@ -11,7 +11,7 @@ export default function SpecialThanks() {
             <div className={styles.container}>
                 <h1 className={styles.title}>Special Thanks</h1>
                 <h4 id={styles.thanks}>
-                    I want to thank everyone who helped me with the creation of this project. But especially Wam, Kabs, Prince, Khalen, Max, and everyone else in the 1001 discord server. Thank you for all your help and support. You are all very cool
+                    I want to thank everyone who helped me with the creation of this project. But especially Lionel, Jacob, Max, and everyone else in the 1001 discord server. Thank you for all your help and support.
                 </h4>
             </div>
             <div className={styles.container}>
