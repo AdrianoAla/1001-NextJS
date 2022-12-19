@@ -171,7 +171,6 @@ export default function Home() {
         <button className={styles.control} onClick={() => makeMove(currentValue, setCurrentValue, "Add")}> + </button>
         <button className={styles.control} onClick={() => makeMove(currentValue, setCurrentValue, "Rot")}><img alt='R' src="https://api.serversmp.xyz/upload/1001/reset.png" width='39%'></img></button>
 
-        <h6 id={styles.specialThanks}>Special thanks to Wam, Kabs, Khalen, Max and Prince. You guys are very cool :D</h6>          
         <h6 id={styles.rankText}><Link href={`user/${auth.currentUser.uid}`} ><a>Rank #{userRank}</a></Link> | <Link href="leaderboard">Leaderboard</Link> | <Link href="search">Search</Link></h6>
         <h6 id={styles.logOut}><Link href="specialthanks"><a>Special Thanks</a></Link> | <Link href="settings"><a>Settings</a></Link> </h6>
       </div>
